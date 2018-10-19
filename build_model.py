@@ -37,16 +37,16 @@ for epoch in range(EPOCHS):
       predictions = model(inp)
       loss = loss_function(target, predictions)
         
-    grads = tape.gradient(loss, model.variables)
-    optimizer.apply_gradients(zip(grads, model.variables))
+      grads = tape.gradient(loss, model.variables)
+      optimizer.apply_gradients(zip(grads, model.variables))
 
-    if batch % 100 == 0:
-      print ('Epoch {} Batch {} Loss {:.4f}'.format(epoch+1,
-                                                    batch,
-                                                    loss))
-  # saving (checkpoint) the model every 5 epochs
-  if (epoch + 1) % 5 == 0:
-    checkpoint.save(file_prefix = checkpoint_prefix)
+      if batch % 100 == 0:
+        print ('Epoch {} Batch {} Loss {:.4f}'.format(epoch+1,
+                                                      batch,
+                                                      loss))
+      # saving (checkpoint) the model every 5 epochs
+      if (epoch + 1) % 5 == 0:
+        checkpoint.save(file_prefix = checkpoint_prefix)
 
-  print ('Epoch {} Loss {:.4f}'.format(epoch+1, loss))
-  print ('Time taken for 1 epoch {} sec\n'.format(time.time() - start))
+      print ('Epoch {} Loss {:.4f}'.format(epoch+1, loss))
+      print ('Time taken for 1 epoch {} sec\n'.format(time.time() - start))
