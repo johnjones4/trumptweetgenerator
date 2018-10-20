@@ -6,6 +6,7 @@ tf.enable_eager_execution()
 import time
 import os
 
+print("Starting up")
 
 (model, dataset, optimizer) = init_model()
 
