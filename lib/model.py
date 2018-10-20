@@ -7,7 +7,7 @@ import numpy as np
 
 def load_text():
   db.init_db()
-  tweets_objects = db.session.query(Tweet).order_by(Tweet.date.desc()).limit(200)
+  tweets_objects = db.session.query(Tweet).order_by(Tweet.date.desc())
   regex = re.compile(r"((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?", re.IGNORECASE)
   tweet_list = map(lambda tweet: regex.sub("", tweet.text), tweets_objects)
   return "\n".join(tweet_list)
