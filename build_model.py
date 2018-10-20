@@ -13,7 +13,7 @@ import os
 EPOCHS = 30
 
 # Directory where the checkpoints will be saved
-checkpoint_dir = os.getenv('TRAINING_CHECKPOINT_DIR','./training_checkpoints')
+checkpoint_dir = os.getenv('TRAINING_CHECKPOINT_DIR','./data/training_checkpoints')
 # Name of the checkpoint files
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
 # Checkpoint instance
@@ -51,7 +51,4 @@ for epoch in range(EPOCHS):
       print ('Epoch {} Loss {:.4f}'.format(epoch+1, loss))
       print ('Time taken for 1 epoch {} sec\n'.format(time.time() - start))
 
-model.save_weights(os.getenv('MODEL_WEIGHTS_FILE','./model_weights.h5'))
-
-with open(os.getenv('MODEL_ARCH_FILE','model_architecture.json'), 'w') as f:
-  f.write(model.to_json())
+model.save_weights(os.getenv('MODEL_WEIGHTS_FILE','./data/model_weights.h5'))
