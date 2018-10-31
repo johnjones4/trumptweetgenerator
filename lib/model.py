@@ -92,7 +92,7 @@ class Model(tf.keras.Model):
     super(Model, self).__init__()
     self.units = units
 
-    self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
+    self.embedding = tf.keras.layers.Embedding(vocab_size + 1, embedding_dim)
 
     if tf.test.is_gpu_available():
       self.gru = tf.keras.layers.CuDNNGRU(self.units, 
