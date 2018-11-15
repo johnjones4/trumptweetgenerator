@@ -4,3 +4,4 @@ __pycache__
 *.pyc
 training_checkpoints
 data
+.DS_Store

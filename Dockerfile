@@ -4,8 +4,7 @@ VOLUME ["/data"]
 
 ENV TRAINING_CHECKPOINT_DIR=/data/training_checkpoints
 ENV DB_URL=sqlite:////data/database.sqlite3
-ENV MODEL_WEIGHTS_FILE=/data/model_weights.h5
-ENV MODEL_ARCH_FILE=/data/model_architecture.json
+ENV VOCAB_FILE=/data/vocab.txt
 
 COPY . /app
 WORKDIR /app
