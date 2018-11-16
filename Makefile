@@ -12,3 +12,6 @@ fetch:
 
 train:
 	docker run --volume "$(DATADIR):/data" -d trumptweetgenerator python build_model.py
+
+predict:
+	docker run --volume "$(DATADIR):/data" -d trumptweetgenerator python make_predictions.py
