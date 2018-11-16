@@ -8,6 +8,7 @@ tf.enable_eager_execution()
 import time
 import os
 import re
+import numpy as np
 
 BATCH_SIZE = 64
 
